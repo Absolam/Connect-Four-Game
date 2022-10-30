@@ -44,7 +44,7 @@ export const Game = ({
         ></span>
         <div className={styles.gameButtons}>
           <button onClick={() => setPause(true)}>MENU</button>
-          <img src="/images/logo.svg" alt="logo" />
+          <img src="images/logo.svg" alt="logo" />
           <button onClick={reset}>RESTART</button>
         </div>
         <div className={styles.boardSubContainer}>
@@ -83,16 +83,16 @@ export const Game = ({
           )}
           <Board
             cl={styles.blackBoard}
-            img="/images/board-layer-black-large.svg"
+            img="images/board-layer-black-large.svg"
           />
           <Board
             cl={styles.whiteBoard}
-            img="/images/board-layer-white-large.svg"
+            img="images/board-layer-white-large.svg"
           />
           {playedCounters}
           {/* <img
             className={styles.counterRed}
-            src="/images/counter-red-large.svg"
+            src="images/counter-red-large.svg"
             alt="counter"
           /> */}
         </div>
@@ -105,8 +105,8 @@ export const Game = ({
             setTimer={setTimer}
             img={
               timer.turn
-                ? "/images/turn-background-red.svg"
-                : "/images/turn-background-yellow.svg"
+                ? "images/turn-background-red.svg"
+                : "images/turn-background-yellow.svg"
             }
             player1={player1}
             player2={player2}
@@ -115,18 +115,14 @@ export const Game = ({
         <PlayerTracker
           cl={`${styles.tracker} ${styles.you}`}
           img={
-            player1.name === "YOU"
-              ? "/images/you.svg"
-              : "/images/player-one.svg"
+            player1.name === "YOU" ? "images/you.svg" : "images/player-one.svg"
           }
           player={player1}
         />
         <PlayerTracker
           cl={`${styles.tracker} ${styles.cpu}`}
           img={
-            player2.name === "CPU"
-              ? "/images/cpu.svg"
-              : "/images/player-two.svg"
+            player2.name === "CPU" ? "images/cpu.svg" : "images/player-two.svg"
           }
           player={player2}
         />

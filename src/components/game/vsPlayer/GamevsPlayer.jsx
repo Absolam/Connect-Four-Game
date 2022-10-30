@@ -53,8 +53,8 @@ export const GameVsPlayer = () => {
           style={{ gridColumn: column, gridRow: min - 1 }}
           src={
             timer.turn
-              ? "/images/counter-red-large.svg"
-              : "/images/counter-yellow-large.svg"
+              ? "images/counter-red-large.svg"
+              : "images/counter-yellow-large.svg"
           }
           alt="counter"
         />,
