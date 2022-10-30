@@ -1,0 +1,569 @@
+:root {
+  --click: auto;
+}
+
+.gameBg {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--purple);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gameButtons {
+  position: absolute;
+  top: -125px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30.859vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gameButtons button {
+  width: 108px;
+  height: 39px;
+  background: #5c2dd5;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--white);
+}
+
+.gameButtons button:hover {
+  background-color: var(--red);
+}
+
+.boardContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30.859vw;
+  height: 28.516vw;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+}
+
+.boards {
+  position: relative;
+  padding-top: 0.391vw;
+  padding-left: 0.391vw;
+  width: 30.859vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(7, 4.297vw);
+  grid-template-rows: repeat(6, 4.297vw);
+  justify-items: center;
+  align-items: center;
+}
+
+.boardSubContainer {
+  position: absolute;
+  padding-top: 0.391vw;
+  padding-left: 0.391vw;
+  width: 30.859vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(7, 4.297vw);
+  grid-template-rows: repeat(6, 4.297vw);
+  justify-items: center;
+  align-items: center;
+}
+
+.boardSubContainer p {
+  z-index: 5;
+  width: 4.297vw;
+  height: calc(4.297vw * 6);
+  align-self: start;
+  pointer-events: var(--click);
+}
+
+.marker {
+  position: absolute;
+  top: -45px;
+  transform: translateX(-50%);
+}
+
+.counterRed {
+  /* +/- 88px to move counter */
+  position: relative;
+  z-index: 2;
+  width: 3.418vw;
+  margin-top: 4px;
+  grid-column: 3;
+  grid-row: 3;
+  /* left: 17px;
+  top: 196px; */
+}
+
+.blackBoard {
+  position: absolute;
+  top: 51.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30.859vw;
+  height: 28.516vw;
+  z-index: 1;
+}
+
+.whiteBoard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30.859vw;
+  height: 28.516vw;
+  z-index: 3;
+}
+
+.shadow {
+  width: 100vw;
+  height: 100%;
+  background-color: var(--darkPurple);
+  border-radius: 60px 60px 0px 0px;
+  position: absolute;
+  bottom: -540px;
+  z-index: 0;
+}
+
+.timer {
+  position: absolute;
+  z-index: 4;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 75%);
+  width: 191px;
+  height: 150px;
+}
+
+.timer img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.timer p:nth-child(2) {
+  width: 100%;
+  position: absolute;
+  top: 41px;
+  left: 50%;
+  transform: translate(-50%);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.timer p:nth-child(3) {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-50%);
+
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 71px;
+  text-align: center;
+}
+
+.playerWon {
+  position: absolute;
+  z-index: 4;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 75%);
+  width: 285px;
+  height: 160px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white);
+  border: 3px solid #000000;
+  box-shadow: 0px 10px 0px #000000;
+  border-radius: 20px;
+}
+
+.playerWon p:nth-child(1) {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.playerWon p:nth-child(2) {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 71px;
+}
+
+.playerWon button {
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+}
+
+.playerWon button:hover {
+  background-color: var(--red);
+}
+
+.tracker {
+  width: 141px;
+  height: 160px;
+  background: #ffffff;
+
+  border: 3px solid #000000;
+  box-shadow: 0px 10px 0px #000000;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tracker h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.tracker p {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 71px;
+  text-align: center;
+}
+
+/* .tracker img {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.you {
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+}
+
+.cpu {
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+}
+
+.you img {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cpu img {
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.pause {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 491px;
+  background-color: var(--purple);
+  border: 3px solid var(--black);
+  box-shadow: 0px 10px 0px var(--black);
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.pause button {
+  width: 400px;
+  height: 72px;
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 0px 10px 0px var(--black);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pause button:hover {
+  border: 3px solid var(--darkPurple);
+  box-shadow: 0px 10px 0px var(--darkPurple);
+}
+
+.pause h3 {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 71px;
+  text-align: center;
+  color: #fff;
+}
+
+.pause a button {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.overcast {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 1100px) {
+  .gameButtons {
+    width: 100%;
+    top: -208px;
+  }
+
+  .gameButtons button {
+    width: 86px;
+    height: 39px;
+  }
+
+  .gameButtons img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .boardContainer {
+    width: 632px;
+    height: 584px;
+  }
+
+  .board {
+    width: 632px;
+    height: 584px;
+  }
+
+  .boards {
+    width: 632px;
+    height: 584px;
+    padding-top: 8px;
+    padding-left: 8px;
+    grid-template-columns: repeat(7, 88px);
+    grid-template-rows: repeat(6, 88px);
+  }
+  .boardSubContainer {
+    width: 632px;
+    height: 584px;
+    padding-top: 8px;
+    padding-left: 8px;
+    grid-template-columns: repeat(7, 88px);
+    grid-template-rows: repeat(6, 88px);
+  }
+  .boardSubContainer p {
+    height: calc(100% * 6);
+    width: 100%;
+  }
+
+  .blackBoard {
+    width: 632px;
+    height: 584px;
+  }
+
+  .whiteBoard {
+    width: 632px;
+    height: 584px;
+  }
+
+  .counterRed {
+    width: 74px;
+    height: 74px;
+  }
+
+  .tracker {
+    width: 296px;
+    height: 100px;
+  }
+
+  .tracker img {
+    top: 50%;
+  }
+
+  .you {
+    left: 0;
+    top: -82px;
+  }
+
+  .you img {
+    left: 0;
+  }
+
+  .cpu {
+    right: 0;
+    top: -82px;
+  }
+
+  .cpu img {
+    right: 0;
+  }
+
+  .marker {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .gameButtons {
+    width: 100%;
+    top: -208px;
+  }
+
+  .gameButtons button {
+    width: 108px;
+    height: 39px;
+  }
+
+  .gameButtons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .boardContainer {
+    width: 335px;
+    height: 310px;
+  }
+
+  .board {
+    width: 335px;
+    height: 310px;
+  }
+
+  .boards {
+    width: 335px;
+    height: 310px;
+    padding-top: 5.3px;
+    padding-left: 5.3px;
+    grid-template-columns: repeat(7, 46.2px);
+    grid-template-rows: repeat(6, 46.2px);
+  }
+
+  .boardSubContainer {
+    width: 335px;
+    height: 310px;
+    padding-top: 5.3px;
+    padding-left: 5.3px;
+    grid-template-columns: repeat(7, 46.2px);
+    grid-template-rows: repeat(6, 46.2px);
+  }
+
+  .blackBoard {
+    width: 335px;
+    height: 310px;
+  }
+
+  .whiteBoard {
+    width: 335px;
+    height: 310px;
+  }
+
+  .counterRed {
+    width: 38px;
+    height: 38px;
+  }
+
+  .tracker {
+    width: 142px;
+    height: 81px;
+  }
+
+  .tracker h3 {
+    font-size: 16px;
+    line-height: normal;
+    margin-top: 10px;
+  }
+
+  .tracker p {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .tracker img {
+    top: 50%;
+  }
+
+  .you {
+    left: 10px;
+    top: -82px;
+  }
+
+  .you img {
+    left: 0;
+  }
+
+  .cpu {
+    right: 10px;
+    top: -82px;
+  }
+
+  .cpu img {
+    right: 0;
+  }
+
+  .marker {
+    display: none;
+  }
+
+  .timer {
+    bottom: -20px;
+  }
+
+  .pause {
+    width: 90%;
+  }
+
+  .pause button {
+    width: 90%;
+  }
+
+  .pause a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

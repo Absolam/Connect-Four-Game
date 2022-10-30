@@ -1,0 +1,11 @@
+import styles from "./game.module.css";
+
+export const PlayerWon = ({ win, reset }) => {
+  return (
+    <div className={styles.playerWon}>
+      <p>{win.player === "TIE" ? "" : win.player.toUpperCase()}</p>
+      <p>{win.player === "TIE" ? "TIE" : "WINS"}</p>
+      <button onClick={reset}>PLAY AGAIN</button>
+    </div>
+  );
+};
