@@ -5,7 +5,6 @@ import App from "./App";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Menu } from "./components/menu/Menu";
 import { Rules } from "./components/rules/Rules";
-import { Game } from "./components/game/Game";
 import { GameVsCPU } from "./components/game/vsCPU/GamevsCPU";
 import { GameVsPlayer } from "./components/game/vsPlayer/GamevsPlayer";
 
@@ -13,11 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="/" element={<Menu />} />
-        <Route path="/rules" element={<Rules />} />
-        <Route path="/vsCPU" element={<GameVsCPU />} />
-        <Route path="/vsPlayer" element={<GameVsPlayer />} />
+      <Route path="/Connect-Four-Game" element={<App />}>
+        <Route path="/Connect-Four-Game" element={<Menu />} />
+        <Route path="/Connect-Four-Game/rules" element={<Rules />} />
+        <Route path="/Connect-Four-Game/vsCPU" element={<GameVsCPU />} />
+        <Route path="/Connect-Four-Game/vsPlayer" element={<GameVsPlayer />} />
       </Route>
     </Routes>
   </BrowserRouter>
