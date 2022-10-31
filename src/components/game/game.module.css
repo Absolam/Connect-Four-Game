@@ -373,6 +373,7 @@
   .boardContainer {
     width: 632px;
     height: 584px;
+    top: 55%;
   }
 
   .board {
@@ -451,7 +452,7 @@
 @media only screen and (max-width: 700px) {
   .gameButtons {
     width: 100%;
-    top: -46.611vw;
+    top: -190px;
   }
 
   .gameButtons button {
@@ -528,8 +529,8 @@
   }
 
   .you {
-    left: 5.556vw;
-    top: -18.056vw;
+    left: 20px;
+    top: -72px;
   }
 
   .you img {
@@ -537,8 +538,8 @@
   }
 
   .cpu {
-    right: 5.556vw;
-    top: -18.056vw;
+    right: 20px;
+    top: -72px;
   }
 
   .cpu img {
