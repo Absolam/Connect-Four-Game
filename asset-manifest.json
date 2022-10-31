@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Connect-Four-Game/static/css/main.d1c2e0f9.css",
+    "main.css": "/Connect-Four-Game/static/css/main.d20d336c.css",
     "main.js": "/Connect-Four-Game/static/js/main.d09892eb.js",
     "index.html": "/Connect-Four-Game/index.html",
-    "main.d1c2e0f9.css.map": "/Connect-Four-Game/static/css/main.d1c2e0f9.css.map",
+    "main.d20d336c.css.map": "/Connect-Four-Game/static/css/main.d20d336c.css.map",
     "main.d09892eb.js.map": "/Connect-Four-Game/static/js/main.d09892eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1c2e0f9.css",
+    "static/css/main.d20d336c.css",
     "static/js/main.d09892eb.js"
   ]
 }
