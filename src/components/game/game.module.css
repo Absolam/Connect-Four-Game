@@ -451,7 +451,7 @@
 @media only screen and (max-width: 700px) {
   .gameButtons {
     width: 100%;
-    top: -208px;
+    top: -46.611vw;
   }
 
   .gameButtons button {
@@ -528,8 +528,8 @@
   }
 
   .you {
-    left: 10px;
-    top: -82px;
+    left: 5.556vw;
+    top: -18.056vw;
   }
 
   .you img {
@@ -537,8 +537,8 @@
   }
 
   .cpu {
-    right: 10px;
-    top: -82px;
+    right: 5.556vw;
+    top: -18.056vw;
   }
 
   .cpu img {
