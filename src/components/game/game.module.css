@@ -355,19 +355,19 @@
 }
 
 .fall1 {
-  animation: fall1 0.2s ease-in;
+  animation: fall1 0.1s ease-in;
 }
 .fall2 {
-  animation: fall2 0.2s ease-in;
+  animation: fall2 0.15s ease-in;
 }
 .fall3 {
-  animation: fall3 0.3s ease-in;
+  animation: fall3 0.2s ease-in;
 }
 .fall4 {
-  animation: fall4 0.3s ease-in;
+  animation: fall4 0.25s ease-in;
 }
 .fall5 {
-  animation: fall5 0.4s ease-in;
+  animation: fall5 0.3s ease-in;
 }
 .fall6 {
   animation: fall6 0.4s ease-in;
@@ -375,7 +375,7 @@
 
 @keyframes fall1 {
   0% {
-    transform: translateY(calc(-100% * 1));
+    transform: translateY(0%);
   }
   100% {
     transform: translateY(0%);
@@ -383,7 +383,7 @@
 }
 @keyframes fall2 {
   0% {
-    transform: translateY(calc(-100% * 2));
+    transform: translateY(calc(-100% * 1));
   }
   100% {
     transform: translateY(0%);
@@ -391,7 +391,7 @@
 }
 @keyframes fall3 {
   0% {
-    transform: translateY(calc(-100% * 3));
+    transform: translateY(calc(-100% * 2));
   }
   100% {
     transform: translateY(0%);
@@ -399,7 +399,7 @@
 }
 @keyframes fall4 {
   0% {
-    transform: translateY(calc(-100% * 4));
+    transform: translateY(calc(-100% * 3));
   }
   100% {
     transform: translateY(0%);
@@ -407,7 +407,7 @@
 }
 @keyframes fall5 {
   0% {
-    transform: translateY(calc(-100% * 5));
+    transform: translateY(calc(-100% * 4));
   }
   100% {
     transform: translateY(0%);
