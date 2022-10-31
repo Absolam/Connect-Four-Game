@@ -41,6 +41,27 @@ export const GameVsPlayer = () => {
   ]);
   const [playedCounters, setPlayedCounters] = useState([]);
 
+  const fallAnimation = (row) => {
+    switch (row) {
+      case 7:
+        return styles.fall6;
+      case 6:
+        return styles.fall6;
+      case 5:
+        return styles.fall5;
+      case 4:
+        return styles.fall4;
+      case 3:
+        return styles.fall3;
+      case 2:
+        return styles.fall2;
+      case 1:
+        return styles.fall1;
+      default:
+        return styles.fall1;
+    }
+  };
+
   const checkColumn = (column) => {
     let filteredArr = trackCounters.filter((block) => block.y === column);
     let min = Math.min(...filteredArr.map((block) => block.x));
@@ -49,7 +70,7 @@ export const GameVsPlayer = () => {
         ...prevstate,
         <img
           key={`${column}${min - 1}`}
-          className={styles.counterRed}
+          className={`${styles.counterRed} ${fallAnimation(min)}`}
           style={{ gridColumn: column, gridRow: min - 1 }}
           src={
             timer.turn
