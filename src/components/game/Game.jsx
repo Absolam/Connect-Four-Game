@@ -21,6 +21,7 @@ export const Game = ({
   checkWin,
   win,
   reset,
+  resetGame,
 }) => {
   const [columnHighlighted, setColumnHighlighted] = useState(1);
   const setColumn = (column) => {
@@ -45,7 +46,7 @@ export const Game = ({
         <div className={styles.gameButtons}>
           <button onClick={() => setPause(true)}>MENU</button>
           <img src="images/logo.svg" alt="logo" />
-          <button onClick={reset}>RESTART</button>
+          <button onClick={resetGame}>RESTART</button>
         </div>
         <div className={styles.boardSubContainer}>
           <p
@@ -129,7 +130,7 @@ export const Game = ({
       </div>
       {pause ? (
         <>
-          <PauseModal reset={reset} setPause={setPause} />
+          <PauseModal resetGame={resetGame} setPause={setPause} />
           <span
             onClick={() => setPause(false)}
             className={styles.overcast}

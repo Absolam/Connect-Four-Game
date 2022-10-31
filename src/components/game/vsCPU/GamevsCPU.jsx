@@ -81,6 +81,23 @@ export const GameVsCPU = () => {
     setWin((prevState) => ({ state: false, player: "" }));
   };
 
+  const resetGame = () => {
+    setTimer((state) => ({ time: 30, turn: !state.turn }));
+    setTrackCounters([
+      { x: 7, y: 1, player: "player 0" },
+      { x: 7, y: 2, player: "player 0" },
+      { x: 7, y: 3, player: "player 0" },
+      { x: 7, y: 4, player: "player 0" },
+      { x: 7, y: 5, player: "player 0" },
+      { x: 7, y: 6, player: "player 0" },
+      { x: 7, y: 7, player: "player 0" },
+    ]);
+    setPlayedCounters([]);
+    setWin((prevState) => ({ state: false, player: "" }));
+    setPlayer1((prevState) => ({ ...prevState, score: 0 }));
+    setPlayer2((prevState) => ({ ...prevState, score: 0 }));
+  };
+
   useEffect(() => {
     const checkWin = () => {
       for (let i = 0; i < winningSet.length; i++) {
@@ -157,6 +174,7 @@ export const GameVsCPU = () => {
         playedCounters={playedCounters}
         win={win}
         reset={reset}
+        resetGame={resetGame}
       />
     </>
   );

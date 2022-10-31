@@ -1,9 +1,9 @@
 import styles from "./game.module.css";
 import { Link } from "react-router-dom";
 
-export const PauseModal = ({ setPause, reset }) => {
+export const PauseModal = ({ setPause, resetGame }) => {
   const resetBoard = () => {
-    reset();
+    resetGame();
     setPause(false);
   };
   return (
