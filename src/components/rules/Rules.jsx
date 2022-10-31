@@ -43,7 +43,11 @@ export const Rules = () => {
         <Link to="/">
           <img
             className={styles.checkButton}
-            src={hovered ? "images/icon-check.svg" : "images/icon-check.svg"}
+            src={
+              hovered
+                ? "/Connect-Four-Game/images/icon-check.svg"
+                : "/Connect-Four-Game/images/icon-check.svg"
+            }
             alt="confirm button"
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}

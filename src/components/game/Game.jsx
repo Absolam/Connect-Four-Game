@@ -45,36 +45,64 @@ export const Game = ({
         ></span>
         <div className={styles.gameButtons}>
           <button onClick={() => setPause(true)}>MENU</button>
-          <img src="images/logo.svg" alt="logo" />
+          <img src="/Connect-Four-Game/images/logo.svg" alt="logo" />
           <button onClick={resetGame}>RESTART</button>
         </div>
         <div className={styles.boardSubContainer}>
           <p
-            onClick={() => setColumn(1)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(1);
+              } else setColumn(1);
+            }}
             onMouseOver={() => columnMarker(1)}
           ></p>
           <p
-            onClick={() => setColumn(2)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(2);
+              } else setColumn(2);
+            }}
             onMouseOver={() => columnMarker(2)}
           ></p>
           <p
-            onClick={() => setColumn(3)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(3);
+              } else setColumn(3);
+            }}
             onMouseOver={() => columnMarker(3)}
           ></p>
           <p
-            onClick={() => setColumn(4)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(4);
+              } else setColumn(4);
+            }}
             onMouseOver={() => columnMarker(4)}
           ></p>
           <p
-            onClick={() => setColumn(5)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(5);
+              } else setColumn(5);
+            }}
             onMouseOver={() => columnMarker(5)}
           ></p>
           <p
-            onClick={() => setColumn(6)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(6);
+              } else setColumn(6);
+            }}
             onMouseOver={() => columnMarker(6)}
           ></p>
           <p
-            onClick={() => setColumn(7)}
+            onClick={() => {
+              if (player1.name === "YOU") {
+                timer.turn && setColumn(7);
+              } else setColumn(7);
+            }}
             onMouseOver={() => columnMarker(7)}
           ></p>
         </div>
@@ -84,16 +112,16 @@ export const Game = ({
           )}
           <Board
             cl={styles.blackBoard}
-            img="images/board-layer-black-large.svg"
+            img="/Connect-Four-Game/images/board-layer-black-large.svg"
           />
           <Board
             cl={styles.whiteBoard}
-            img="images/board-layer-white-large.svg"
+            img="/Connect-Four-Game/images/board-layer-white-large.svg"
           />
           {playedCounters}
           {/* <img
             className={styles.counterRed}
-            src="images/counter-red-large.svg"
+            src="/Connect-Four-Game/images/counter-red-large.svg"
             alt="counter"
           /> */}
         </div>
@@ -106,8 +134,8 @@ export const Game = ({
             setTimer={setTimer}
             img={
               timer.turn
-                ? "images/turn-background-red.svg"
-                : "images/turn-background-yellow.svg"
+                ? "/Connect-Four-Game/images/turn-background-red.svg"
+                : "/Connect-Four-Game/images/turn-background-yellow.svg"
             }
             player1={player1}
             player2={player2}
@@ -116,14 +144,18 @@ export const Game = ({
         <PlayerTracker
           cl={`${styles.tracker} ${styles.you}`}
           img={
-            player1.name === "YOU" ? "images/you.svg" : "images/player-one.svg"
+            player1.name === "YOU"
+              ? "/Connect-Four-Game/images/you.svg"
+              : "/Connect-Four-Game/images/player-one.svg"
           }
           player={player1}
         />
         <PlayerTracker
           cl={`${styles.tracker} ${styles.cpu}`}
           img={
-            player2.name === "CPU" ? "images/cpu.svg" : "images/player-two.svg"
+            player2.name === "CPU"
+              ? "/Connect-Four-Game/images/cpu.svg"
+              : "/Connect-Four-Game/images/player-two.svg"
           }
           player={player2}
         />

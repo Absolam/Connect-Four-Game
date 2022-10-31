@@ -74,8 +74,8 @@ export const GameVsCPU = () => {
           style={{ gridColumn: column, gridRow: min - 1 }}
           src={
             timer.turn
-              ? "images/counter-red-large.svg"
-              : "images/counter-yellow-large.svg"
+              ? "/Connect-Four-Game/images/counter-red-large.svg"
+              : "/Connect-Four-Game/images/counter-yellow-large.svg"
           }
           alt="counter"
         />,
@@ -166,8 +166,10 @@ export const GameVsCPU = () => {
         } else result = [];
       }
     };
-    checkWin();
-  }, [trackCounters]);
+    if (win.state === false) {
+      checkWin();
+    }
+  }, [trackCounters, win.state]);
 
   useEffect(() => {
     if (trackCounters.length === 49) {
@@ -180,6 +182,47 @@ export const GameVsCPU = () => {
       document.documentElement.style.setProperty("--click", "none");
     } else document.documentElement.style.setProperty("--click", "auto");
   });
+
+  useEffect(() => {
+    if (!timer.turn) {
+      const runCPU = () => {
+        const getRandomPair = () => {
+          let column = Math.floor(Math.random() * (7 - 1 + 1) + 1);
+          let filteredArr = trackCounters.filter((block) => block.y === column);
+          let min = Math.min(...filteredArr.map((o) => o.x));
+          if (min <= 1) {
+            runCPU();
+          } else return [min, column];
+        };
+
+        const [min, column] = getRandomPair();
+        if (!win.state) {
+          setPlayedCounters((prevstate) => [
+            ...prevstate,
+            <img
+              key={`${column}${min - 1}`}
+              className={`${styles.counterRed} ${fallAnimation(min)}`}
+              style={{ gridColumn: column, gridRow: min - 1 }}
+              src={
+                timer.turn
+                  ? "/Connect-Four-Game/images/counter-red-large.svg"
+                  : "/Connect-Four-Game/images/counter-yellow-large.svg"
+              }
+              alt="counter"
+            />,
+          ]);
+        }
+        setTrackCounters((prevstate) => [
+          ...prevstate,
+          { x: min - 1, y: column, player: timer.turn ? "YOU" : "CPU" },
+        ]);
+        setTimer((state) => ({ time: 30, turn: !state.turn }));
+      };
+      setTimeout(() => {
+        runCPU();
+      }, 800);
+    }
+  }, [trackCounters, timer.turn, win.state]);
 
   return (
     <>
